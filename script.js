@@ -66,6 +66,8 @@ document.querySelector('.check').addEventListener('click',function(){
                 document.querySelector('.score').textContent=0;
             }
     }
+  
+ 
     
     // //When guess is to high
     // else if(guess>secretNumber){
