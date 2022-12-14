@@ -49,32 +49,44 @@ document.querySelector('.check').addEventListener('click',function(){
             document.querySelector('.highscore').textContent=highScore;
         }
         }
-    //When guess is to high
-    else if(guess>secretNumber){
+  
+    else if(guess!==secretNumber){
         if(score>1){
-        document.querySelector('.message').textContent="📈 Too high!";
-        score--;
-        document.querySelector('.score').textContent=score;
-        }
-        else{
-            document.querySelector('.message').textContent="💥You Lost the Game!";
-            document.querySelector('.score').textContent=0;
-        }
-       
+            document.querySelector('.message').textContent= guess>secretNumber?"📈 Too high!":"📉 Too low";
+            score--;
+            document.querySelector('.score').textContent=score;
+            }
+            else{
+                document.querySelector('.message').textContent="💥You Lost the Game!";
+                document.querySelector('.score').textContent=0;
+            }
     }
-    // when guess is to loow
-    else if(guess<secretNumber){
-        if(score>1){
-    document.querySelector('.message').textContent="📉 Too Low!";
-    score--;
-    document.querySelector('.score').textContent=score;
-        }
-        else{
-            document.querySelector('.message').textContent="💥You Lost the Game!";
-            document.querySelector('.score').textContent=0
-        }
+    
+    // //When guess is to high
+    // else if(guess>secretNumber){
+    //     if(score>1){
+    //     document.querySelector('.message').textContent="📈 Too high!";
+    //     score--;
+    //     document.querySelector('.score').textContent=score;
+    //     }
+    //     else{
+    //         document.querySelector('.message').textContent="💥You Lost the Game!";
+    //         document.querySelector('.score').textContent=0;
+    //     }
+       
+    // }
+    // // when guess is to loow
+    // else if(guess<secretNumber){
+    //     if(score>1){
+    // document.querySelector('.message').textContent="📉 Too Low!";
+    // score--;
+    // document.querySelector('.score').textContent=score;
+    //     }
+    //     else{
+    //         document.querySelector('.message').textContent="💥You Lost the Game!";
+    //         document.querySelector('.score').textContent=0
+    //     }}
 
-}
 })
 
 //Functionality of Agian button 
